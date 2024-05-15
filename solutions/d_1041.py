@@ -13,7 +13,7 @@ class Solution:
     
     def isRobotBounded2(self, instructions: str) -> bool:
         basic = {
-            'G': (1,  1 ), 
+            'G': (1,  1), 
             'L': (0,  1j), 
             'R': (0, -1j)}
         start = (0, 1)
@@ -22,7 +22,8 @@ class Solution:
         return (rr == 0) or (theta != 1)
 
 
-def compose_moves(m0, m1): 
+def compose_moves(m0, m1):
+    # Walk d1 in the rotation of th_0, then rotate th_1.   
     d0, th0 = m0
     d1, th1 = m1
     return (d0 + th0*d1, th0*th1) 
